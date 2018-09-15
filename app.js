@@ -22,7 +22,7 @@ switch (comando) {
     case 'listar':
         // console.log("Mostrar todas las tareas por hacer");
 
-        let listado = porHacer.getListado();
+        let listado = porHacer.getListado(argv.mostrar);
 
         for (let tarea of listado) {
             console.log("====Por hacer====".green);

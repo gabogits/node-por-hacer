@@ -10,9 +10,17 @@ const completado = {
     desc: "Marca como completado  o pendeinte la tarea"
 };
 
+const mostrar = {
+    alias: "m",
+    default: "todas",
+};
+
 const argv = require('yargs')
     .command('crear', 'Crear un elemento por hacer', {
         descripcion
+    })
+    .command('listar', 'regresa un listado de tareas, terminadas o no', {
+        mostrar
     })
     .command('actualizar', 'Actualiza el estado completo de una tarea', {
         descripcion,

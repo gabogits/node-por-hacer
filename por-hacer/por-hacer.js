@@ -37,9 +37,21 @@ const crear = (descripcion) => {
 
 }
 
-const getListado = () => {
+const getListado = (mostrar) => {
     cargarDB();
-    return listadoPorHacer;
+
+    if (mostrar == "todas") {
+        return listadoPorHacer;
+    }
+    if (mostrar == "pendientes") {
+        let pendientes = listadoPorHacer.filter(tarea => tarea.completado == false);
+        return pendientes;
+    }
+    if (mostrar == "terminadas") {
+        let terminadas = listadoPorHacer.filter(tarea => tarea.completado == true);
+        return terminadas;
+    }
+
 }
 
 
